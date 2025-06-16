@@ -1,7 +1,7 @@
     app:
         name: MySQL
         code: mysql
-        notify: skchekon@cloudbourne.co
+        notify: skchekon@ecloudcontrol.com
 
     build:
         version: 5.7
