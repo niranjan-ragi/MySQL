@@ -3,7 +3,7 @@ users:
   - name: wordpress-web
     password: $MYSQL_WORDPRESSWEB_PASSWORD
   - name: wordpress
-    password: $MYSQL_WORDPRESS_PASSWORD
+    password: $MYSQL_PASSWORD
     
 databases:
   - name: wordpress_web
