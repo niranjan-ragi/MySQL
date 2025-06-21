@@ -18,6 +18,7 @@
         resources: x-large
         port:
         - 3306
+        - 9101
 
     volumes:
       - claim: mysql-data
@@ -30,6 +31,7 @@
         size: 250Gi
 
     properties:
+        ENABLE_BACKUP_METRIC: 1
         MYSQL_ROOT_PASSWORD:
           vault: MYSQL_ROOT_PASSWORD_KEY
         MYSQL_TRACKER_PASSWORD:
