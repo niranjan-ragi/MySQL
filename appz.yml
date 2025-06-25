@@ -34,4 +34,4 @@
           vault: MYSQL_ROOT_PASSWORD
         MYSQL_DB_PASSWORD:
           vault: MYSQL_DB_PASSWORD
-        revision : 0
+        revision : 1
