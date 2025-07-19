@@ -31,7 +31,7 @@
         size: 250Gi
 
     properties:
-        ENABLE_BACKUP_METRIC: 1
+        ENABLE_BACKUP_METRICS: 1
         MYSQL_ROOT_PASSWORD:
           vault: MYSQL_ROOT_PASSWORD_KEY
         MYSQL_TRACKER_PASSWORD:
