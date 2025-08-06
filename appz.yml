@@ -4,36 +4,38 @@
         notify: appzdev@cloudbourne.co
 
     build:
-        version: 5.7
+        version: 8.0
         env: DEV
         build_file: none
         output_files: output/*.zip
-        image_template: mysql-5.7
+        image_template: mysql-8.0
 
     deploy:
-        context: alpha/DEV
+        context: athulecloud-1207/DEV
         type: statefulset
         replicas: 1
-        resources: x-large
         ingress: none
+        resources: x-large
         port:
         - 3306
+        - 9101
 
     volumes:
       - claim: mysql-data
         mount: /var/lib/mysql
         name: data
-        size: 5Gi
+        size: 250Gi
       - claim: mysql-backup
         mount: /appz/backup
         name: backup
-        size: 5Gi
+        size: 250Gi
 
     properties:
+        ENABLE_BACKUP_METRICS: 1
         MYSQL_ROOT_PASSWORD:
           vault: MYSQL_ROOT_PASSWORD_KEY
-        MYSQL_SPRINGBOOTWEB_PASSWORD:
-          vault: MYSQL_SPRINGBOOTWEB_PASSWORD
-        MYSQL_WORDPRESS_PASSWORD:
-          vault: MYSQL_WORDPRESS_PASSWORD
-        revision : 26
+        MYSQL_TRACKER_PASSWORD:
+          vault: MYSQL_TRACKER_PASSWORD
+        MYSQL_ECLOUDCONTROL_PASSWORD:
+          vault: MYSQL_ECLOUDCONTROL_PASSWORD
+        revision : 42
