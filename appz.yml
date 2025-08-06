@@ -11,7 +11,7 @@
         image_template: mysql-8.0
 
     deploy:
-        context: athulecloud-1207/DEV
+        context: niranjan-ragi/DEV
         type: statefulset
         replicas: 1
         ingress: none
