@@ -24,11 +24,11 @@
       - claim: mysql-data
         mount: /var/lib/mysql
         name: data
-        size: 250Gi
+        size: 5Gi
       - claim: mysql-backup
         mount: /appz/backup
         name: backup
-        size: 250Gi
+        size: 5Gi
 
     properties:
         ENABLE_BACKUP_METRICS: 1
