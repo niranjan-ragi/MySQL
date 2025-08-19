@@ -30,6 +30,7 @@
         size: 5Gi
 
     properties:
+        BINLOG_EXPIRE_LOGS_SECONDS : 259200
         MYSQL_ROOT_PASSWORD:
           vault: MYSQL_ROOT_PASSWORD
         MYSQL_DB_PASSWORD:
