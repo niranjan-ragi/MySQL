@@ -1,17 +1,17 @@
     app:
         name: MySQL
         code: mysql
-        notify: skchekon@ecloudcontrol.com
+        notify: rniranjan@ecloudcontrol.com
 
     build:
-        version: 5.7
+        version: 8.0
         env: DEV
         build_file: none
         output_files: output/*.zip
-        image_template: mysql-5.7
+        image_template: mysql-8.0
 
     deploy:
-        context: skchekon/DEV
+        context: niranjan-ragi/DEV
         type: statefulset
         replicas: 1
         resources: x-large
