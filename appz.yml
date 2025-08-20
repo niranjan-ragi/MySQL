@@ -18,6 +18,7 @@
         ingress: none
         port:
         - 3306
+        - 9101
 
     volumes:
       - claim: mysql-data
@@ -31,8 +32,13 @@
 
     properties:
         BINLOG_EXPIRE_LOGS_SECONDS : 259200
+        ENABLE_BACKUP_METRICS: 1
         MYSQL_ROOT_PASSWORD:
           vault: MYSQL_ROOT_PASSWORD
         MYSQL_DB_PASSWORD:
           vault: MYSQL_DB_PASSWORD
+         MYSQL_TRACKER_PASSWORD:
+          vault: MYSQL_TRACKER_PASSWORD
+        MYSQL_ECLOUDCONTROL_PASSWORD:
+          vault: MYSQL_ECLOUDCONTROL_PASSWORD
         revision : 5
