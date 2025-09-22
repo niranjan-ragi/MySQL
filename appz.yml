@@ -14,8 +14,8 @@
         context: niranjan-ragi/DEV
         type: statefulset
         replicas: 1
-        resources: x-large
         ingress: none
+        resources: x-large
         port:
         - 3306
         - 9101
@@ -24,21 +24,20 @@
       - claim: mysql-data
         mount: /var/lib/mysql
         name: data
-        size: 5Gi
+        size: 250Gi
       - claim: mysql-backup
         mount: /appz/backup
         name: backup
-        size: 5Gi
+        size: 250Gi
 
     properties:
-        BINLOG_EXPIRE_LOGS_SECONDS : 259200
         ENABLE_BACKUP_METRICS: 1
+        BACKUP_RETENTION: 8
+        BINLOG_EXPIRE_LOGS_SECONDS: 86400
         MYSQL_ROOT_PASSWORD:
-          vault: MYSQL_ROOT_PASSWORD
-        MYSQL_DB_PASSWORD:
-          vault: MYSQL_DB_PASSWORD
+          vault: MYSQL_ROOT_PASSWORD_KEY
         MYSQL_TRACKER_PASSWORD:
           vault: MYSQL_TRACKER_PASSWORD
         MYSQL_ECLOUDCONTROL_PASSWORD:
           vault: MYSQL_ECLOUDCONTROL_PASSWORD
-        revision : 6
+        revision : 43
